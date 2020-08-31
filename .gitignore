@@ -4,6 +4,9 @@
 .pnp.js
 
 # misc
+
+!/uploads/cv/.gitkeep
+/.nyc_output
 .DS_Store
 .env
 .env.local
@@ -22,6 +25,3 @@ settings.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-!/uploads/cv/.gitkeep
-/.nyc_output
