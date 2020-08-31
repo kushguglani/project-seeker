@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.production
+.env.sit
+.env.uat
+.env.development.local
+.env.test.local
+.env.production.local
+.prettierrc
+dev-build*
+sit-build*
+uat-build*
+settings.json
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

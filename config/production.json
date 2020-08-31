@@ -1,0 +1,5 @@
+{
+    "connectionStringDev": "mongodb://localhost:27017/project-seeker",
+    "connectionStringTest": "mongodb://localhost:27017/project-seeker-test",
+    "secret": "project-seeker-secret-kush-is-always-khush"
+}

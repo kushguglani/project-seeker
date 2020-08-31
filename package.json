@@ -1,0 +1,37 @@
+{
+  "name": "pig-game",
+  "version": "1.0.0",
+  "description": "dice score game",
+  "main": "server.js",
+  "scripts": {
+    "start": "env-cmd -f .env.development node server.js",
+    "test": "env-cmd -f .env.test nyc mocha ./test/*_test.js --exit --inspect=0.0.0.0:9229",
+    "develop": "env-cmd -f .env.development nodemon server.js",
+    "unit-tests": "env-cmd -f .env.test mocha test/unit.js"
+  },
+  "author": "kush guglani",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express-jwt": "^6.0.0",
+    "mongoose": "^5.9.26",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "rootpath": "^0.1.2",
+    "server": "^1.0.29",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2"
+  }
+}
