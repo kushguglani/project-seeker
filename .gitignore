@@ -6,6 +6,7 @@
 # misc
 
 !/uploads/cv/.gitkeep
+/uploads
 /.nyc_output
 .DS_Store
 .env
