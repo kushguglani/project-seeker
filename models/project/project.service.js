@@ -1,11 +1,9 @@
-const config = require('config/config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const db = require('helpers/db');
 const Project = db.Project;
 
 module.exports = {
-    authenticate,
     getAll,
     getById,
     create,
@@ -15,17 +13,6 @@ module.exports = {
     apply,
     inactive
 };
-
-async function authenticate({ email, password }) {
-    const project = await Project.findOne({ email });
-    if (project && bcrypt.compareSync(password, project.password)) {
-        const token = jwt.sign({ sub: project.id }, config.secret, { expiresIn: '7d' });
-        return {
-            ...project.toJSON(),
-            token
-        };
-    }
-}
 
 async function apply(id, userID ) {
     const project = await Project.findById(id);

@@ -7,14 +7,14 @@
     "start": "env-cmd -f .env.development node server.js",
     "test": "env-cmd -f .env.test nyc mocha ./test/*_test.js --exit --inspect=0.0.0.0:9229",
     "develop": "env-cmd -f .env.development nodemon server.js",
-    "unit-tests": "env-cmd -f .env.test mocha test/unit.js"
+    "unit-tests": "env-cmd -f .env.test mocha test/unit.js",
+    "test2": "env-cmd -f .env.test nodemon --exec mocha -R min"
   },
   "author": "kush guglani",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "config": "^3.3.1",
     "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express-jwt": "^6.0.0",

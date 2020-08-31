@@ -11,11 +11,6 @@ const EmployeeSchema = mongoose.Schema({
     created: { type: Date, default: Date.now },
     updated: { type: Date }
 });
-EmployeeSchema.methods.encryptPassword = (password) => {
-
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-
-}
 
 EmployeeSchema.set('toJSON', {
     virtuals: true,
@@ -26,10 +21,6 @@ EmployeeSchema.set('toJSON', {
     }
 });
 
-// do not use arrow function since arrow function does not support this keyword binding
-EmployeeSchema.methods.isValidPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-}
 
 const Employees = mongoose.model('Employees', EmployeeSchema);
 

@@ -16,9 +16,6 @@ const ProjectSchema = mongoose.Schema({
     created: { type: Date, default: Date.now },
     updated: { type: Date }
 });
-ProjectSchema.methods.encryptPassword = (password) => {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-}
 
 ProjectSchema.set('toJSON', {
     virtuals: true,
@@ -28,10 +25,6 @@ ProjectSchema.set('toJSON', {
     }
 });
 
-// do not use arrow function since arrow function does not support this keyword binding
-ProjectSchema.methods.isValidPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-}
 
 const Projects = mongoose.model('Projects', ProjectSchema);
 module.exports = Projects;

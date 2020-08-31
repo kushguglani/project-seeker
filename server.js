@@ -18,7 +18,6 @@ function setupExpess() {
     const app = express();
     const server = http.createServer(app);
 
-    require('./config/passport');
     app.use(bodyParser.urlencoded({ extended: false }));
     // parses all bodies as a string
     app.use(bodyParser.json());
@@ -34,28 +33,8 @@ function setupExpess() {
     app.use('/manager', require('./models/manager/manager.controller'));
     app.use('/project', require('./models/project/project.controller'));
 
-    app.use(passport.initialize());
-    app.use(passport.session());
     // global error handler
     app.use(errorHandler);
-
-
-    // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', {
-        scope: ['public_profile', 'email']
-    }));
-
-    // test
-    app.get('/a',(req,res)=>{
-        res.send("hello")
-    })
-
-    // handle the callback after facebook has authenticated the user
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/profile',
-            failureRedirect: '/'
-        }));
 
     // start server
     server.listen(port, (err) => {

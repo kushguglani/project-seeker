@@ -1,4 +1,3 @@
-const config = require('config/config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const db = require('helpers/db');
@@ -18,7 +17,7 @@ async function authenticate({ userName, password }) {
     const manager = await Manager.findOne({ userName });
     if (manager && bcrypt.compareSync(password, manager.password)) {
         const payload = { id: manager.id, role: 'manager' };
-        const token = jwt.sign(payload, config.secret, { expiresIn: '7d' });
+        const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '7d' });
         return {
             ...manager.toJSON(),
             token

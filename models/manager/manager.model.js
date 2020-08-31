@@ -9,10 +9,6 @@ const ManagerSchema = mongoose.Schema({
     created: { type: Date, default: Date.now },
     updated: { type: Date }
 });
-ManagerSchema.methods.encryptPassword = (password) => {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-
-}
 
 ManagerSchema.set('toJSON', {
     virtuals: true,
@@ -23,10 +19,6 @@ ManagerSchema.set('toJSON', {
     }
 });
 
-// do not use arrow function since arrow function does not support this keyword binding
-ManagerSchema.methods.isValidPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-}
 
 const Managers = mongoose.model('Managers', ManagerSchema);
 
