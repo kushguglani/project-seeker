@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 !/uploads/cv/.gitkeep
-.nyc_output/*
+.nyc_output
