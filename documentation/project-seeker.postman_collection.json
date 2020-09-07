@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "project seeker",
-		"_postman_id": "15ee1f20-1ca0-1d04-7e6a-140e078ec6ec",
+		"name": "project-seeker",
+		"_postman_id": "9aa147e0-fbc8-be39-27fd-992170fc5fe2",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 				{
 					"name": "add project",
 					"request": {
-						"url": "localhost:5000/project/register",
+						"url": "https://project-seeker.herokuapp.com/project/register",
 						"method": "POST",
 						"header": [
 							{
@@ -24,7 +24,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjE4MjQ3LCJleHAiOjE1OTcyMjMwNDd9.N7tjmm2PkDZvuyq8VaVBC7UBD9sLhIUlSMkp71U-k_Y",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							}
 						],
@@ -39,16 +39,19 @@
 				{
 					"name": "Projet opening",
 					"request": {
-						"url": "localhost:5000/project/opening",
+						"url": "https://project-seeker.herokuapp.com/project/opening",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjM5ODA0NDA1Mjc4MDYyOWMxOSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NzI5Mjc2MiwiZXhwIjoxNTk3ODk3NTYyfQ.UpBEdVLgLx-Lev0uhT4GSagnmCh-TWTmIZM8taCcleg",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -56,12 +59,12 @@
 				{
 					"name": "apply for project",
 					"request": {
-						"url": "localhost:5000/project/apply/5f2a7e8cf6e7da5414a8bac8",
+						"url": "https://project-seeker.herokuapp.com/project/apply/5f2a7e8cf6e7da5414a8bac8",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjhjODA0NDA1Mjc4MDYyOWMxYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NjYyMjIxMCwiZXhwIjoxNTk3MjI3MDEwfQ.vOjG4jNU2aSmHIyfNOLhXNdcGQkG5CExzp1--uGGQkQ",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -81,12 +84,12 @@
 				{
 					"name": "project inactivate ",
 					"request": {
-						"url": "localhost:5000/project/delete/5f2a831d9d2fd871d01d2fb2",
+						"url": "https://project-seeker.herokuapp.com/project/delete/5f2a831d9d2fd871d01d2fb2",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjIzMTc0LCJleHAiOjE1OTcyMjc5NzR9.ty-frP8wU5sLCg_irAFiNV6H5c0ujUuBTFBxW3YXoOI",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -106,12 +109,12 @@
 				{
 					"name": "delete project permanently",
 					"request": {
-						"url": "localhost:5000/project/_delete/5f2a83029d2fd871d01d2fb1",
+						"url": "https://project-seeker.herokuapp.com/project/_delete/5f2a83029d2fd871d01d2fb1",
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjIzMTc0LCJleHAiOjE1OTcyMjc5NzR9.ty-frP8wU5sLCg_irAFiNV6H5c0ujUuBTFBxW3YXoOI",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -131,12 +134,12 @@
 				{
 					"name": "update project details",
 					"request": {
-						"url": "localhost:5000/project/5f2a7da1f6e7da5414a8bac7",
+						"url": "https://project-seeker.herokuapp.com/project/5f2a7da1f6e7da5414a8bac7",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjIzMTc0LCJleHAiOjE1OTcyMjc5NzR9.ty-frP8wU5sLCg_irAFiNV6H5c0ujUuBTFBxW3YXoOI",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -156,12 +159,12 @@
 				{
 					"name": "get selected project details by id",
 					"request": {
-						"url": "localhost:5000/project/5f2a7da1f6e7da5414a8bac7",
+						"url": "https://project-seeker.herokuapp.com/project/5f2a7da1f6e7da5414a8bac7",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjIzMTc0LCJleHAiOjE1OTcyMjc5NzR9.ty-frP8wU5sLCg_irAFiNV6H5c0ujUuBTFBxW3YXoOI",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -181,12 +184,12 @@
 				{
 					"name": "get all projects",
 					"request": {
-						"url": "localhost:5000/project/",
+						"url": "https://project-seeker.herokuapp.com/project/",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjIzMTc0LCJleHAiOjE1OTcyMjc5NzR9.ty-frP8wU5sLCg_irAFiNV6H5c0ujUuBTFBxW3YXoOI",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -212,7 +215,7 @@
 				{
 					"name": "register",
 					"request": {
-						"url": "localhost:5000/employee/register",
+						"url": "https://project-seeker.herokuapp.com/employee/register",
 						"method": "POST",
 						"header": [
 							{
@@ -232,7 +235,7 @@
 				{
 					"name": "authenticate login",
 					"request": {
-						"url": "localhost:5000/employee/authenticate",
+						"url": "https://project-seeker.herokuapp.com/employee/authenticate",
 						"method": "POST",
 						"header": [
 							{
@@ -243,7 +246,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"yashGuglani1\",\r\n    \"password\": \"123456\"\r\n}"
+							"raw": "{\r\n    \"userName\": \"kushGuglani1\",\r\n    \"password\": \"123456\"\r\n}"
 						},
 						"description": ""
 					},
@@ -252,16 +255,19 @@
 				{
 					"name": "list of employees",
 					"request": {
-						"url": "localhost:5000/employee/",
+						"url": "https://project-seeker.herokuapp.com/employee/",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjhjODA0NDA1Mjc4MDYyOWMxYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NzI1Nzc4MywiZXhwIjoxNTk3ODYyNTgzfQ.i4tLPXQVycuhNfDXWTFqmcBZiIRVZ3JBYfp2kJLT4ZM",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -269,16 +275,19 @@
 				{
 					"name": "download documentation",
 					"request": {
-						"url": "localhost:5000/employee/downloadDocuments/postmanJson",
+						"url": "https://project-seeker.herokuapp.com/employee/",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNTY1MDY1M2FiYmQ4NjE3MGFjYjgwYyIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5OTQ5MjIxMCwiZXhwIjoxNjAwMDk3MDEwfQ.7Sj2unzgtL9ymDoeCQAIiSYgKo4rg6RK3PvYxjpKhWQ",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -286,16 +295,19 @@
 				{
 					"name": "current-employee-details",
 					"request": {
-						"url": "localhost:5000/employee/current",
+						"url": "https://project-seeker.herokuapp.com/employee/current",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjM5ODA0NDA1Mjc4MDYyOWMxOSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5ODM1MzA2NiwiZXhwIjoxNTk4OTU3ODY2fQ.65-t4M9I_Mgr6ihtphAD8rv-zRtRHLXdTFF8JWd2MwY",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -303,12 +315,12 @@
 				{
 					"name": "update employee details",
 					"request": {
-						"url": "localhost:5000/employee/5f26d058528d4181b405c845",
+						"url": "https://project-seeker.herokuapp.com/employee/5f26d058528d4181b405c845",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZkMDU4NTI4ZDQxODFiNDA1Yzg0NSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NjYwMzA2NiwiZXhwIjoxNTk3MjA3ODY2fQ.qaSj7ZzaRs0mTKg8AdHAyCQNm0vqwnX8i2HmVDTf3q4",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -328,12 +340,12 @@
 				{
 					"name": "user inactivate ",
 					"request": {
-						"url": "localhost:5000/employee/delete/5f26d058528d4181b405c845",
+						"url": "https://project-seeker.herokuapp.com/employee/delete/5f26d058528d4181b405c845",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZkMDU4NTI4ZDQxODFiNDA1Yzg0NSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NjYwMzA2NiwiZXhwIjoxNTk3MjA3ODY2fQ.qaSj7ZzaRs0mTKg8AdHAyCQNm0vqwnX8i2HmVDTf3q4",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -353,12 +365,12 @@
 				{
 					"name": "delete employee permanently",
 					"request": {
-						"url": "localhost:5000/employee/_delete/5f2a4f0579b29a40e0e34122",
+						"url": "https://project-seeker.herokuapp.com/employee/_delete/5f2a4f0579b29a40e0e34122",
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZkMDU4NTI4ZDQxODFiNDA1Yzg0NSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NjYwMzA2NiwiZXhwIjoxNTk3MjA3ODY2fQ.qaSj7ZzaRs0mTKg8AdHAyCQNm0vqwnX8i2HmVDTf3q4",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -378,16 +390,19 @@
 				{
 					"name": "get by id",
 					"request": {
-						"url": "localhost:5000/employee/5f26d058528d4181b405c845",
+						"url": "https://project-seeker.herokuapp.com/employee/5f26d058528d4181b405c845",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZkMDU4NTI4ZDQxODFiNDA1Yzg0NSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NjYwMzA2NiwiZXhwIjoxNTk3MjA3ODY2fQ.qaSj7ZzaRs0mTKg8AdHAyCQNm0vqwnX8i2HmVDTf3q4",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -395,12 +410,12 @@
 				{
 					"name": "upload cv",
 					"request": {
-						"url": "http://localhost:5000/employee/uploadResume",
+						"url": "http://https://project-seeker.herokuapp.com/employee/uploadResume",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjM5ODA0NDA1Mjc4MDYyOWMxOSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5NzI5Mjc2MiwiZXhwIjoxNTk3ODk3NTYyfQ.UpBEdVLgLx-Lev0uhT4GSagnmCh-TWTmIZM8taCcleg",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							},
 							{
@@ -435,16 +450,19 @@
 				{
 					"name": "download resume",
 					"request": {
-						"url": "localhost:5000/employee/downloadResume/5f2a6f398044052780629c19",
+						"url": "https://project-seeker.herokuapp.com/employee/downloadResume/5f2a6f398044052780629c19",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjM5ODA0NDA1Mjc4MDYyOWMxOSIsInJvbGUiOiJlbXBsb3llZSIsImlhdCI6MTU5ODM1MzA2NiwiZXhwIjoxNTk4OTU3ODY2fQ.65-t4M9I_Mgr6ihtphAD8rv-zRtRHLXdTFF8JWd2MwY",
+								"value": "Bearer {{jwtTokenEmployee}}",
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -458,7 +476,7 @@
 				{
 					"name": "manager-register",
 					"request": {
-						"url": "localhost:5000/manager/register",
+						"url": "https://project-seeker.herokuapp.com/manager/register",
 						"method": "POST",
 						"header": [
 							{
@@ -478,12 +496,12 @@
 				{
 					"name": "get by id",
 					"request": {
-						"url": "localhost:5000/manager/5f2a5429bc39300f5caa08c8",
+						"url": "https://project-seeker.herokuapp.com/manager/5f2a5429bc39300f5caa08c8",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE1NDI5YmMzOTMwMGY1Y2FhMDhjOCIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjA5NTgzLCJleHAiOjE1OTcyMTQzODN9.btTfAHPhxKS7DI1g7ZO8eXqHRYKUiOuL8sXajHBrJjE",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							}
 						],
@@ -495,7 +513,7 @@
 				{
 					"name": "manager-authenticate",
 					"request": {
-						"url": "localhost:5000/manager/authenticate",
+						"url": "https://project-seeker.herokuapp.com/manager/authenticate",
 						"method": "POST",
 						"header": [
 							{
@@ -515,12 +533,12 @@
 				{
 					"name": "list of manager",
 					"request": {
-						"url": "localhost:5000/manager",
+						"url": "https://project-seeker.herokuapp.com/manager",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE2ZjViODA0NDA1Mjc4MDYyOWMxYSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjE4MjQ3LCJleHAiOjE1OTcyMjMwNDd9.N7tjmm2PkDZvuyq8VaVBC7UBD9sLhIUlSMkp71U-k_Y",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -538,12 +556,12 @@
 				{
 					"name": "update mager details",
 					"request": {
-						"url": "localhost:5000/manager/5f26bba1cecb424328f4c8dd",
+						"url": "https://project-seeker.herokuapp.com/manager/5f26bba1cecb424328f4c8dd",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZiYmExY2VjYjQyNDMyOGY0YzhkZCIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2Mzc2NDU5LCJleHAiOjE1OTY5ODEyNTl9.FuPIKylbKAq2AZx7ak9bVf59pVd71VQv_0NrpFWod8U",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -563,12 +581,12 @@
 				{
 					"name": "current-manager-details",
 					"request": {
-						"url": "localhost:5000/manager/current",
+						"url": "https://project-seeker.herokuapp.com/manager/current",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmE1NDI5YmMzOTMwMGY1Y2FhMDhjOCIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2NjA5NTgzLCJleHAiOjE1OTcyMTQzODN9.btTfAHPhxKS7DI1g7ZO8eXqHRYKUiOuL8sXajHBrJjE",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							}
 						],
@@ -580,12 +598,12 @@
 				{
 					"name": "manager inactivate ",
 					"request": {
-						"url": "localhost:5000/manager/delete/5f26bba1cecb424328f4c8dd",
+						"url": "https://project-seeker.herokuapp.com/manager/delete/5f26bba1cecb424328f4c8dd",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZiYmExY2VjYjQyNDMyOGY0YzhkZCIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2Mzc2NDU5LCJleHAiOjE1OTY5ODEyNTl9.FuPIKylbKAq2AZx7ak9bVf59pVd71VQv_0NrpFWod8U",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -605,12 +623,12 @@
 				{
 					"name": "delete manager permanently",
 					"request": {
-						"url": "localhost:5000/manager/_delete/5f26ca4cc4834f39fc391004",
+						"url": "https://project-seeker.herokuapp.com/manager/_delete/5f26ca4cc4834f39fc391004",
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMjZiYmExY2VjYjQyNDMyOGY0YzhkZCIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNTk2Mzc2NDU5LCJleHAiOjE1OTY5ODEyNTl9.FuPIKylbKAq2AZx7ak9bVf59pVd71VQv_0NrpFWod8U",
+								"value": "Bearer {{jwtTokenManager}}",
 								"description": ""
 							},
 							{
@@ -626,8 +644,39 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "authenticate login",
+					"request": {
+						"url": "https://project-seeker.herokuapp.com/manager/authenticate",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Manager2\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "Documentation",
+			"request": {
+				"url": "https://project-seeker.herokuapp.com/documentation",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
