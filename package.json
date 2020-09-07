@@ -4,7 +4,7 @@
   "description": "dice score game",
   "main": "server.js",
   "scripts": {
-    "start": "env-cmd -f .env.development node server.js",
+    "start": "node server.js",
     "test": "env-cmd -f .env.test nyc mocha ./test/*_test.js --exit --inspect=0.0.0.0:9229",
     "develop": "env-cmd -f .env.development nodemon server.js",
     "unit-tests": "env-cmd -f .env.test mocha test/unit.js",
