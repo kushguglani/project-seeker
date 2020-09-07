@@ -29,9 +29,9 @@ function setupExpess() {
     app.use(jwt());
 
     // api user routes
-    app.use('/employee', require('./models/employee/employee.controller'));
-    app.use('/manager', require('./models/manager/manager.controller'));
-    app.use('/project', require('./models/project/project.controller'));
+    app.use('/employee', require('./modules/employee/employee.controller'));
+    app.use('/manager', require('./modules/manager/manager.controller'));
+    app.use('/project', require('./modules/project/project.controller'));
 
     // project documentation in json
     app.get('/documentation', (req, res) => {

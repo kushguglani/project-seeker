@@ -10,7 +10,7 @@ mongoose.connection.on('error', err => {
   });
 
 module.exports = {
-    Employee: require('../models/employee/employee.model'),
-    Manager: require('../models/manager/manager.model'),
-    Project: require('../models/project/project.model'),
+    Employee: require('../modules/employee/employee.model'),
+    Manager: require('../modules/manager/manager.model'),
+    Project: require('../modules/project/project.model'),
 };

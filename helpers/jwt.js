@@ -1,6 +1,6 @@
 const expressJwt = require('express-jwt');
-const userService = require('models/employee/employee.service');
-const managerService = require('models/manager/manager.service');
+const userService = require('modules/employee/employee.service');
+const managerService = require('modules/manager/manager.service');
 
 module.exports = jwt;
 

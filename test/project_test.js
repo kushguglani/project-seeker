@@ -1,9 +1,9 @@
 const chai = require('chai');
 const chaiHttp = require("chai-http");
 
-const Project = require("../models/project/project.model");
-const Manager = require("../models/manager/manager.model");
-const Employee = require("../models/employee/employee.model");
+const Project = require("../modules/project/project.model");
+const Manager = require("../modules/manager/manager.model");
+const Employee = require("../modules/employee/employee.model");
 const app = require('../server');
 
 

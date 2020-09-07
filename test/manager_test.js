@@ -4,7 +4,7 @@ chai.use(chaiHttp);
 const app = require('../server');
 const should = chai.should();
 const expect = chai.expect;
-const Manager = require('../models/manager/manager.model');
+const Manager = require('../modules/manager/manager.model');
 let token = "";
 let managerId = ";"
 

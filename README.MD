@@ -6,7 +6,7 @@
 * passport
 * mongoose
 
-### Models
+### Modules
 * emolyee
 * manger
 * project
@@ -57,6 +57,11 @@ for more details of api download file *https://project-seeker.herokuapp.com/docu
 run command - npm run test
 *run with code coverage
 
-### For live api
+### local
+run command - npm run local
+
+### For live api (production )
+https://project-seeker.herokuapp.com
+
 replace -> localhost:5000 with https://project-seeker.herokuapp.com
-in case of heroku file upload not work
+In case of heroku file upload not work
