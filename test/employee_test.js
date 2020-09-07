@@ -41,6 +41,45 @@ describe("Employee api Test", () => {
             })
     });
 
+    // Test to register an existing employee
+    it("should register an existing employee", (done) => {
+        chai.request(app)
+            .post('/employee/register')
+            .send({
+                name: 'Pickachu',
+                userName: 'Picka',
+                email: 'picka@gmail.com',
+                password: '123456'
+            })
+            .end((error, res) => {
+                should.exist(res.body);
+                res.should.have.status(400);
+                res.body.should.be.a('object');
+                // expect(res.body.message).to.be.text('Employee Registered sucessfully');
+                expect(res).to.have.status(400);
+                done();
+            })
+    });
+
+    // Test to not register an employee without user name
+    it("should not register an employee without user name", (done) => {
+        chai.request(app)
+            .post('/employee/register')
+            .send({
+                name: 'Pickachu',
+                email: 'picka12@gmail.com',
+                password: '123456'
+            })
+            .end((error, res) => {
+                should.exist(res.body);
+                res.should.have.status(500);
+                res.body.should.be.a('object');
+                // expect(res.body.message).to.be.text('Employee Registered sucessfully');
+                expect(res).to.have.status(500);
+                done();
+            })
+    });
+
     // Test to authenticate an employee
     it("should authenticate an employee", (done) => {
         chai.request(app)
@@ -60,6 +99,23 @@ describe("Employee api Test", () => {
             })
     });
 
+    // Test to authenticate an employee with invalid credentials
+    it("should authenticate an employee with invalid credentials", (done) => {
+        chai.request(app)
+            .post('/employee/authenticate')
+            .send({
+                userName: 'Picka',
+                password: '12345612'
+            })
+            .end((error, res) => {
+                should.exist(res.body);
+                res.should.have.status(401);
+                res.body.should.be.a('object');
+                expect(res).to.have.status(401);
+                done();
+            })
+    });
+
     // Test to get list of all employees
     it("should  get list of all employees", (done) => {
         chai.request(app)
@@ -71,6 +127,19 @@ describe("Employee api Test", () => {
                 res.body.should.be.a('array');
                 res.body.length.should.be.eql(1);
                 expect(res).to.have.status(200);
+                done();
+            })
+    });
+
+    // Test to get list of all employees without token
+    it("should  get list of all employees", (done) => {
+        chai.request(app)
+            .get('/employee/')
+            .end((error, res) => {
+                should.exist(res.body);
+                res.should.have.status(401);
+                res.body.should.be.a('object');
+                expect(res).to.have.status(401);
                 done();
             })
     });
