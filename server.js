@@ -33,6 +33,12 @@ function setupExpess() {
     app.use('/manager', require('./models/manager/manager.controller'));
     app.use('/project', require('./models/project/project.controller'));
 
+    // project documentation in json
+    app.get('/documentation', (req, res) => {
+        res.download('documentation/project-seeker.postman_collection.json', 'project-seeker.postman_collection.json');
+
+    })
+
     // global error handler
     app.use(errorHandler);
 

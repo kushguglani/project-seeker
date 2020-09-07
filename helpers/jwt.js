@@ -14,7 +14,7 @@ function jwt() {
             '/manager/authenticate',
             '/manager/register',
             '/auth/facebook',
-            '/a'
+            '/documentation'
         ]
     });
 }

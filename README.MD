@@ -4,13 +4,14 @@
 * express
 * jwt
 * passport
+* mongoose
 
 ### Models
 * emolyee
 * manger
 * project
 
-### employee api list 
+### Employee api list 
 |API name| Url |
 |---|---|
 |register                     | url=> *localhost:5000/employee/register*|
@@ -21,9 +22,9 @@
 |user inactivate              | url=> *localhost:5000/employee/delete/?employeeId*|
 |delete employee permanently  | url=> *localhost:5000/employee/_delete/employeeId*|
 |get by id                    | url=> *localhost:5000/employee/?employeeId*|
-|upload cv                    | url=> *http://localhost:5000/employee/uploadResume*|
+|upload cv                    | url=> *localhost:5000/employee/uploadResume*|
 
-### manager api list 
+### Manager api list 
 |API name| Url |
 |---|---|
 |manager-register              |url=> *localhost:5000/manager/register*|
@@ -35,7 +36,7 @@
 |manager inactivate            |url=> *localhost:5000/manager/delete/?mangerID*|
 |delete manager permanently    |url=> *localhost:5000/manager/_delete/?mangerID*|
 
-### project api list 
+### Project api list 
 |API name| Url |
 |---|---|
 |add project                         |url=>*localhost:5000/project/register*|
@@ -48,8 +49,14 @@
 |get all projects                    |url=>*localhost:5000/project/*|
 
 
-for more details download file name - url
+for more details of api download file *https://project-seeker.herokuapp.com/documentation
 
 
 
-##heroku doesnot support file uploadd
+### Test
+run command - npm run test
+*run with code coverage
+
+### For live api
+replace -> localhost:5000 with https://project-seeker.herokuapp.com
+in case of heroku file upload not work
