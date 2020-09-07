@@ -65,3 +65,6 @@ https://project-seeker.herokuapp.com
 
 replace -> localhost:5000 with https://project-seeker.herokuapp.com
 In case of heroku file upload not work
+
+### Mlab connection String
+mongodb://kg:abc123@ds011800.mlab.com:11800/kush
